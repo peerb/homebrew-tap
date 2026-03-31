@@ -1,6 +1,6 @@
 cask "usagebar" do
-  version "1.0.1"
-  sha256 "4d4958ef1c9b86aeac3b049fee282f7ac7e7143699dd059940985fb86e34802a"
+  version "1.0.2"
+  sha256 "1c635a07c8cc32cb4d9200ae931feded4ebbcd02def2aceda4454d6ee6d0c576"
 
   url "https://github.com/peerb/usage-bar/releases/download/v#{version}/UsageBar.zip"
   name "UsageBar"
