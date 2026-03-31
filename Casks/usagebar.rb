@@ -9,6 +9,11 @@ cask "usagebar" do
 
   app "UsageBar.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+      args: ["-dr", "com.apple.quarantine", "#{appdir}/UsageBar.app"]
+  end
+
   zap trash: [
     "~/Library/LaunchAgents/com.usagebar.plist",
     "~/.claude/usagebar.log",
