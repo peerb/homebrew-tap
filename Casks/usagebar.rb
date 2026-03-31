@@ -9,10 +9,11 @@ cask "usagebar" do
 
   app "UsageBar.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-      args: ["-dr", "com.apple.quarantine", "#{appdir}/UsageBar.app"]
-  end
+  caveat <<~EOS
+    UsageBar is not code-signed. If macOS shows a "damaged" warning, run:
+      xattr -dr com.apple.quarantine /Applications/UsageBar.app
+    Then open the app again.
+  EOS
 
   zap trash: [
     "~/Library/LaunchAgents/com.usagebar.plist",
