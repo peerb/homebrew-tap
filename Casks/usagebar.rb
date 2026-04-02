@@ -9,12 +9,6 @@ cask "usagebar" do
 
   app "UsageBar.app"
 
-  caveat <<~EOS
-    UsageBar is not code-signed. If macOS shows a "damaged" warning, run:
-      xattr -dr com.apple.quarantine /Applications/UsageBar.app
-    Then open the app again.
-  EOS
-
   zap trash: [
     "~/Library/LaunchAgents/com.usagebar.plist",
     "~/.claude/usagebar.log",
