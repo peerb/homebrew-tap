@@ -1,0 +1,20 @@
+name: Audit Casks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - name: Tap this repository
+        run: brew tap peerb/tap "$(pwd)"
+
+      - name: Audit cask
+        run: brew audit --cask peerb/tap/usagebar
